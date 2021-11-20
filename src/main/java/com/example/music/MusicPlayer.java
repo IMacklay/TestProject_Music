@@ -1,14 +1,6 @@
 package com.example.music;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import javax.swing.text.html.parser.Entity;
 import java.util.*;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 
 public class MusicPlayer {
 
@@ -30,22 +22,33 @@ public class MusicPlayer {
         int numGenre = random.nextInt(MusicGenre.values().length);
         MusicGenre choiceMusicGenre = MusicGenre.values()[numGenre];
 
-        Map<MusicGenre,List<String>> choiceGenreMap = new HashMap<>();
+        //Забираем из Листа эл-т который подходит по жанру
+        //С помощью перебора musicList
+//        Map<MusicGenre,List<String>> choiceGenreMap = new HashMap<>();
+//        for (Music pickMusic: musicList) {
+//            if (pickMusic.getMusicGenre() == choiceMusicGenre) {
+//                choiceGenreMap = pickMusic.getSongs();
+//                break;
+//            }
+//        };
 
-        for (Music list: musicList) {
-            if (list.getMusicGenre() == choiceMusicGenre) {
-                choiceGenreMap = list.getSongs();
-                break;
-            }
-        }
-
+        //Забираем из Листа эл-т который подходит по жанру
+        //C использованием Stream
+        Map<MusicGenre,List<String>> choiceGenreMap = musicList.stream()
+                .filter(value -> value.getMusicGenre() == choiceMusicGenre )
+                .findFirst()
+                .orElseThrow()
+                .getSongs()
+                ;
 
         //Выбор песни
-        int numSong = random.nextInt(choiceGenreMap.values().size());
-        System.out.println(choiceGenreMap);
+        int numSong = random.nextInt(choiceGenreMap.get(choiceMusicGenre).toArray().length);
         String choiceMusic = choiceGenreMap.get(choiceMusicGenre).get(numSong);
 
-        System.out.println("Now playing: ("+choiceMusicGenre+"): " + choiceMusic);
+        //Выводим результат
+        System.out.println("Choiced genre: "+choiceMusicGenre+"\n" +
+                           "Number choiced song: "+numSong);
+        System.out.println("Now playing: " + choiceMusic);
 
     }
 

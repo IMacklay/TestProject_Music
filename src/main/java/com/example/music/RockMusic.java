@@ -6,16 +6,15 @@ import java.util.*;
 
 public class RockMusic implements Music{
 
-    public final MusicGenre musicGenre = MusicGenre.ROCK;
+    private final MusicGenre musicGenre = MusicGenre.ROCK;
+    private List<String> listOfSongs = new ArrayList<>();
 
     public Map<MusicGenre,List<String>> getSongs() {
-        Map<MusicGenre,List<String>> rockMap = fillRockMap();
-        return rockMap;
+        return fillRockMap();
     }
 
     private Map<MusicGenre,List<String>> fillRockMap(){
 
-        List<String> listOfSongs = new ArrayList<>();
         listOfSongs.add("AC/DC - Highway to Hell");
         listOfSongs.add("VanHallen - Aint Talkin boat love");
         listOfSongs.add("KINO - PEREMEN");
