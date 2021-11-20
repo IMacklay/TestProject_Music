@@ -41,8 +41,6 @@ public class MusicPlayer {
                 .getSongs()
                 ;
 
-
-
         //Выбор песни
         int numSong = random.nextInt(choiceGenreMap.get(choiceMusicGenre).toArray().length);
         String choiceMusic = choiceGenreMap.get(choiceMusicGenre).get(numSong);
