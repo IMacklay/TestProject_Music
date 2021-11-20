@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:cotext="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+   <!-- <cotext:component-scan base-package="com.example.music"/>
+
+    <cotext:property-placeholder location="classpath:MusicPlayer.properties"/> -->
+
+<!--    <bean id="musicBeanRock"-->
+<!--          class="com.example.music.RockMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicBeanClassic"-->
+<!--          class="com.example.music.ClassicMusic">-->
+<!--    </bean>-->
+<!--    <bean id="musicBeanPOP"-->
+<!--          class="com.example.music.POPMusic">-->
+<!--    </bean>-->
+
+
+
+<!--    <bean id="musicPlayer"-->
+<!--          class="com.example.music.MusicPlayer">-->
+<!--        &lt;!&ndash; Передача бина в конструктор-->
+<!--        <constructor-arg ref="musicBean"/> &ndash;&gt;-->
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean = "musicBeanRock"/>-->
+<!--                <ref bean = "musicBeanClassic"/>-->
+<!--                <ref bean = "musicBeanPOP"/>-->
+<!--            </list>-->
+<!--        </property>-->
+
+<!--        &lt;!&ndash; Задание значений из файла .properties используя сеттер&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+
+<!--    </bean>-->
+</beans>
